@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, 
   Sparkles, 
@@ -25,6 +25,8 @@ import { BUSINESS_CONFIG, getWhatsAppLink } from '../data/business';
 import { PORTFOLIO_ITEMS } from '../data/portfolio';
 
 export const Home = () => {
+  const [activeServiceCategory, setActiveServiceCategory] = useState('all');
+
   return (
     <>
       <SEO 
@@ -210,16 +212,40 @@ export const Home = () => {
       </section>
 
       {/* =========================================================================
-          SERVICES SECTION
+          SERVICES SECTION (Enhanced with Interactive Category Filter & Animations)
           Heading: "Everything Your Business Needs to Grow"
           Description: "Complete advertising, branding, and digital marketing solutions under one roof."
       ========================================================================= */}
-      <section id="services-section" className="py-16 md:py-24 bg-[#F6F8F5] relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#0B6B35]/10 text-[#0B6B35] mb-3">
-              <Sparkles size={13} />
+      <section id="services-section" className="py-16 md:py-24 bg-[#F6F8F5] relative overflow-hidden">
+        {/* Animated Ambient Floating Orbs in Background */}
+        <motion.div 
+          animate={{ 
+            y: [0, -20, 0],
+            scale: [1, 1.05, 1]
+          }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-20 -left-20 w-96 h-96 bg-[#0B6B35]/8 rounded-full blur-3xl pointer-events-none" 
+        />
+        <motion.div 
+          animate={{ 
+            y: [0, 20, 0],
+            scale: [1, 1.08, 1]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute bottom-10 -right-20 w-96 h-96 bg-[#F4C542]/10 rounded-full blur-3xl pointer-events-none" 
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header with entrance motion */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center max-w-3xl mx-auto mb-10"
+          >
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[#0B6B35]/10 text-[#0B6B35] mb-3 shadow-sm border border-[#0B6B35]/15">
+              <Sparkles size={13} className="text-[#16A34A] animate-spin" style={{ animationDuration: '8s' }} />
               Full-Spectrum Agency Solutions
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#17231B] tracking-tight">
@@ -228,25 +254,80 @@ export const Home = () => {
             <p className="text-gray-600 text-base sm:text-lg mt-3 leading-relaxed">
               Complete advertising, branding, and digital marketing solutions under one roof.
             </p>
+          </motion.div>
+
+          {/* Animated Interactive Service Filter Pills */}
+          <div className="flex items-center justify-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar">
+            {[
+              { id: 'all', label: 'All Services', count: SERVICES.length },
+              { id: 'social', label: 'Social & Digital Ads', count: 2 },
+              { id: 'creative', label: 'Design & Video', count: 3 },
+              { id: 'outreach', label: 'Direct Messaging & Voice', count: 4 },
+            ].map((tab) => {
+              const isActive = activeServiceCategory === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveServiceCategory(tab.id)}
+                  className={`relative px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-colors duration-200 flex items-center gap-1.5 ${
+                    isActive ? 'text-white' : 'text-gray-600 hover:text-[#0B6B35] bg-white border border-gray-200'
+                  }`}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeHomeServiceTab"
+                      className="absolute inset-0 bg-gradient-to-r from-[#0B6B35] to-[#16A34A] rounded-xl shadow-md shadow-[#0B6B35]/25"
+                      transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                    />
+                  )}
+                  <span className="relative z-10">{tab.label}</span>
+                  <span className={`relative z-10 text-[10px] px-1.5 py-0.5 rounded-full ${
+                    isActive ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-500'
+                  }`}>
+                    {tab.count}
+                  </span>
+                </button>
+              );
+            })}
           </div>
 
-          {/* Service Cards Grid (All 9 Services) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {SERVICES.map((service, index) => (
+          {/* Service Cards Grid with Layout Animations */}
+          <motion.div 
+            layout
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          >
+            {SERVICES.filter((service) => {
+              if (activeServiceCategory === 'social') {
+                return ['social-media-marketing', 'facebook-advertising'].includes(service.id);
+              }
+              if (activeServiceCategory === 'creative') {
+                return ['graphic-design', 'video-editing', 'photography-printing'].includes(service.id);
+              }
+              if (activeServiceCategory === 'outreach') {
+                return ['bulk-sms', 'whatsapp-marketing', 'voice-call', 'toll-free-services'].includes(service.id);
+              }
+              return true;
+            }).map((service, index) => (
               <ServiceCard key={service.id} service={service} index={index} />
             ))}
-          </div>
+          </motion.div>
 
-          {/* All Services Bottom CTA */}
-          <div className="mt-12 text-center">
+          {/* All Services Bottom CTA with hover bounce */}
+          <motion.div 
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="mt-14 text-center"
+          >
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm bg-white text-[#0B6B35] hover:bg-[#0B6B35] hover:text-white border border-[#0B6B35]/20 shadow-sm transition-all duration-200"
+              className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl font-bold text-sm bg-white text-[#0B6B35] hover:bg-[#0B6B35] hover:text-white border border-[#0B6B35]/20 shadow-md shadow-black/5 hover:shadow-xl hover:shadow-[#0B6B35]/15 transition-all duration-300 hover:-translate-y-0.5"
             >
-              <span>Explore In-Depth Deliverables For All Services</span>
-              <ArrowRight size={16} />
+              <span>Explore In-Depth Deliverables For All 9 Services</span>
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
