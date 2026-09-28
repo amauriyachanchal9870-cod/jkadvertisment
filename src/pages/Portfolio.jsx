@@ -46,7 +46,7 @@ export const Portfolio = () => {
             </div>
           </div>
 
-          {/* Category Filter Pills */}
+          {/* Category Filter Pills with Sliding Spring Indicator */}
           <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar">
             {PORTFOLIO_CATEGORIES.map((category) => {
               const isSelected = selectedCategory === category;
@@ -54,13 +54,20 @@ export const Portfolio = () => {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-200 ${
+                  className={`relative px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-colors duration-200 ${
                     isSelected
-                      ? 'bg-[#0B6B35] text-white shadow-md shadow-[#0B6B35]/25 scale-105'
-                      : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                      ? 'text-white'
+                      : 'bg-white text-gray-700 hover:text-[#0B6B35] border border-gray-200 shadow-sm'
                   }`}
                 >
-                  {category}
+                  {isSelected && (
+                    <motion.div
+                      layoutId="activePortfolioTab"
+                      className="absolute inset-0 bg-gradient-to-r from-[#0B6B35] to-[#16A34A] rounded-xl shadow-md shadow-[#0B6B35]/25"
+                      transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                    />
+                  )}
+                  <span className="relative z-10">{category}</span>
                 </button>
               );
             })}

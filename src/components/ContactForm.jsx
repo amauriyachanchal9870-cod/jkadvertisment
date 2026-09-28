@@ -321,27 +321,31 @@ export const ContactForm = ({ defaultService = "" }) => {
           )}
         </AnimatePresence>
 
-        {/* Submit Actions */}
+        {/* Submit Actions with Spring Physics & Hover Shimmer */}
         <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <button
+          <motion.button
             type="button"
             onClick={handleWhatsAppSubmit}
-            className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-sm text-white bg-[#25D366] hover:bg-[#20bd5a] shadow-lg shadow-[#25D366]/25 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.96 }}
+            className="w-full relative overflow-hidden flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#20bd5a] to-[#25D366] shadow-lg shadow-[#25D366]/30 transition-shadow duration-200"
           >
             <MessageCircle size={18} />
             <span>Send Enquiry on WhatsApp</span>
-            <ExternalLink size={14} className="opacity-70" />
-          </button>
+            <ExternalLink size={14} className="opacity-80" />
+          </motion.button>
 
-          <button
+          <motion.button
             type="button"
             onClick={handleEmailSubmit}
-            className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-sm text-white bg-[#0B6B35] hover:bg-[#085027] shadow-lg shadow-[#0B6B35]/25 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.96 }}
+            className="w-full relative overflow-hidden flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#0B6B35] to-[#16A34A] shadow-lg shadow-[#0B6B35]/30 transition-shadow duration-200"
           >
             <Mail size={18} />
             <span>Send Enquiry via Email</span>
-            <ExternalLink size={14} className="opacity-70" />
-          </button>
+            <ExternalLink size={14} className="opacity-80" />
+          </motion.button>
         </div>
 
         {/* Transparent Static Disclaimer */}

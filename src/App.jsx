@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { ScrollToTop } from './components/ScrollToTop';
 import { PageLoader } from './components/PageLoader';
+import { ScrollProgressBar } from './components/ScrollProgressBar';
 
 // Code-split lazy loaded pages for optimal performance and instant initial load
 const Home = lazy(() => import('./pages/Home'));
@@ -20,6 +21,9 @@ export const App = () => {
     <div className="flex flex-col min-h-screen bg-[#F6F8F5]">
       {/* Scroll restoration helper */}
       <ScrollToTop />
+
+      {/* Top Animated Scroll Progress Bar */}
+      <ScrollProgressBar />
 
       {/* Sticky Top Navbar */}
       <Navbar />

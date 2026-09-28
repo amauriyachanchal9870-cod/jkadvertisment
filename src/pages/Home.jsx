@@ -19,6 +19,7 @@ import { SEO } from '../components/SEO';
 import { ServiceCard } from '../components/ServiceCard';
 import { ContactForm } from '../components/ContactForm';
 import { DynamicIcon } from '../components/IconMapper';
+import { FaqAccordion } from '../components/FaqAccordion';
 import { SERVICES } from '../data/services';
 import { HOW_WE_WORK_STEPS, WHY_CHOOSE_US, GENERAL_FAQS } from '../data/agencyData';
 import { BUSINESS_CONFIG, getWhatsAppLink } from '../data/business';
@@ -170,38 +171,52 @@ export const Home = () => {
                   </div>
                 </div>
 
-                {/* Floating Card 1: Facebook Boosting Live */}
+                {/* Floating Card 1: Facebook Boosting Live (Continuous Smooth Float) */}
                 <motion.div 
                   initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.3, duration: 0.4 }}
-                  className="absolute -top-6 -left-6 sm:-left-8 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-xl border border-gray-100 flex items-center gap-3 hidden sm:flex"
+                  animate={{ 
+                    y: [0, -10, 0],
+                    opacity: 1 
+                  }}
+                  transition={{ 
+                    y: { duration: 4.5, repeat: Infinity, ease: "easeInOut" },
+                    opacity: { duration: 0.5, delay: 0.3 }
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  className="absolute -top-6 -left-6 sm:-left-8 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-2xl border border-gray-100 flex items-center gap-3 hidden sm:flex cursor-default shadow-[#1877F2]/10"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#1877F2] text-white flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#1877F2] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#1877F2]/30">
                     <Megaphone size={18} />
                   </div>
                   <div>
                     <div className="flex items-center gap-1.5">
-                      <span className="text-xs font-bold text-[#17231B]">Facebook Post Boosting</span>
+                      <span className="text-xs font-extrabold text-[#17231B]">Facebook Post Boosting</span>
                       <span className="w-2 h-2 rounded-full bg-[#16A34A] animate-ping" />
                     </div>
-                    <span className="text-[10px] text-gray-500 font-medium">Targeted Local Engagement</span>
+                    <span className="text-[10px] text-gray-500 font-semibold">Targeted Local Engagement</span>
                   </div>
                 </motion.div>
 
-                {/* Floating Card 2: WhatsApp Conversion */}
+                {/* Floating Card 2: WhatsApp Conversion (Continuous Smooth Float) */}
                 <motion.div 
                   initial={{ y: -20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.4, duration: 0.4 }}
-                  className="absolute -bottom-6 -right-4 sm:-right-6 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-xl border border-gray-100 flex items-center gap-3 hidden sm:flex"
+                  animate={{ 
+                    y: [0, 10, 0],
+                    opacity: 1 
+                  }}
+                  transition={{ 
+                    y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.6 },
+                    opacity: { duration: 0.5, delay: 0.4 }
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  className="absolute -bottom-6 -right-4 sm:-right-6 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-2xl border border-gray-100 flex items-center gap-3 hidden sm:flex cursor-default shadow-[#25D366]/10"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#25D366] text-white flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#25D366] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#25D366]/30">
                     <MessageCircle size={18} />
                   </div>
                   <div>
-                    <span className="text-xs font-bold text-[#17231B] block">Direct Customer Leads</span>
-                    <span className="text-[10px] text-[#16A34A] font-semibold">Click-to-WhatsApp Flow</span>
+                    <span className="text-xs font-extrabold text-[#17231B] block">Direct Customer Leads</span>
+                    <span className="text-[10px] text-[#16A34A] font-bold">Click-to-WhatsApp Flow</span>
                   </div>
                 </motion.div>
               </div>
@@ -379,23 +394,28 @@ export const Home = () => {
               </div>
             </div>
 
-            {/* Right Grid: 6 Value Pillars */}
+            {/* Right Grid: 6 Value Pillars with Staggered Hover Animations */}
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
               {WHY_CHOOSE_US.map((item, i) => (
-                <div 
+                <motion.div 
                   key={i}
-                  className="p-6 rounded-2xl bg-[#F6F8F5] hover:bg-white hover:shadow-card transition-all duration-300 border border-transparent hover:border-gray-100"
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  whileHover={{ y: -6, scale: 1.02 }}
+                  className="group p-6 rounded-3xl bg-[#F6F8F5] hover:bg-white hover:shadow-card-hover transition-all duration-300 border border-transparent hover:border-gray-200/80 cursor-default"
                 >
-                  <div className="w-11 h-11 rounded-xl bg-[#0B6B35]/10 text-[#0B6B35] flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-2xl bg-[#0B6B35]/10 text-[#0B6B35] group-hover:bg-[#0B6B35] group-hover:text-white transition-all duration-300 flex items-center justify-center mb-4 shadow-sm group-hover:scale-110">
                     <DynamicIcon name={item.icon} size={22} />
                   </div>
-                  <h3 className="text-base font-bold text-[#17231B] mb-1.5">
+                  <h3 className="text-base font-bold text-[#17231B] group-hover:text-[#0B6B35] transition-colors mb-1.5">
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                     {item.description}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
 
@@ -404,15 +424,24 @@ export const Home = () => {
       </section>
 
       {/* =========================================================================
-          HOW WE WORK (Animated 4-Step Process)
+          HOW WE WORK (Animated 4-Step Process with Connecting Trail)
       ========================================================================= */}
       <section className="py-16 md:py-24 bg-[#17231B] text-white relative overflow-hidden">
         {/* Ambient glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0B6B35]/20 rounded-full blur-3xl pointer-events-none" />
+        <motion.div 
+          animate={{ scale: [1, 1.15, 1], opacity: [0.15, 0.25, 0.15] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-[#0B6B35] rounded-full blur-3xl pointer-events-none" 
+        />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 text-[#F4C542] mb-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 text-[#F4C542] mb-3 border border-white/15">
               <Sparkles size={13} />
               Our Proven Methodology
             </span>
@@ -422,36 +451,47 @@ export const Home = () => {
             <p className="text-gray-400 text-base mt-2">
               A transparent, structured four-step journey from initial brief to successful execution.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {HOW_WE_WORK_STEPS.map((step, index) => (
-              <div 
-                key={step.number}
-                className="relative bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:bg-white/10 transition-colors"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="text-2xl font-black text-[#F4C542]">
-                      {step.number}
-                    </span>
-                    <div className="w-10 h-10 rounded-xl bg-[#0B6B35] text-white flex items-center justify-center">
-                      <DynamicIcon name={step.icon} size={20} />
+          {/* Timeline Container with Connecting Animated Trail */}
+          <div className="relative">
+            {/* Desktop Connecting Line */}
+            <div className="hidden lg:block absolute top-[52px] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-[#0B6B35] via-[#F4C542] to-[#16A34A] opacity-40 z-0" />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+              {HOW_WE_WORK_STEPS.map((step, index) => (
+                <motion.div 
+                  key={step.number}
+                  initial={{ opacity: 0, y: 35 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: index * 0.1 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="relative group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/25 rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xl"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-5">
+                      <span className="text-3xl font-black text-[#F4C542] group-hover:scale-110 transition-transform inline-block">
+                        {step.number}
+                      </span>
+                      <div className="w-12 h-12 rounded-2xl bg-[#0B6B35] text-white flex items-center justify-center shadow-lg shadow-[#0B6B35]/40 group-hover:bg-[#16A34A] group-hover:rotate-6 transition-all duration-300">
+                        <DynamicIcon name={step.icon} size={22} />
+                      </div>
                     </div>
-                  </div>
 
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#16A34A] block mb-1">
-                    {step.subtitle}
-                  </span>
-                  <h3 className="text-lg font-bold text-white mb-2.5">
-                    {step.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+                    <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#16A34A] block mb-1">
+                      {step.subtitle}
+                    </span>
+                    <h3 className="text-lg font-bold text-white mb-2.5 group-hover:text-[#F4C542] transition-colors">
+                      {step.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -486,39 +526,47 @@ export const Home = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {PORTFOLIO_ITEMS.slice(0, 4).map((item, index) => (
-              <Link 
+              <motion.div
                 key={item.id}
-                to="/portfolio"
-                className="group bg-[#F6F8F5] rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-card transition-all duration-300 flex flex-col hover:-translate-y-1"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                whileHover={{ y: -6 }}
               >
-                <div className="relative aspect-[4/3] bg-gray-200 overflow-hidden">
-                  <img
-                    src={item.thumbnail}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className="absolute top-3 left-3">
-                    <span className="px-2.5 py-1 rounded-full text-[9px] font-extrabold uppercase bg-white/95 text-[#0B6B35] shadow-sm">
-                      {item.category}
-                    </span>
+                <Link 
+                  to="/portfolio"
+                  className="group bg-[#F6F8F5] rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-card transition-all duration-300 flex flex-col h-full"
+                >
+                  <div className="relative aspect-[4/3] bg-gray-200 overflow-hidden">
+                    <img
+                      src={item.thumbnail}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-3 left-3">
+                      <span className="px-2.5 py-1 rounded-full text-[9px] font-extrabold uppercase bg-white/95 text-[#0B6B35] shadow-sm">
+                        {item.category}
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                <div className="p-4 flex-1 flex flex-col justify-between">
-                  <div>
-                    <span className="text-[10px] text-gray-400 font-semibold block mb-0.5">
-                      {item.clientType}
+                  <div className="p-4 flex-1 flex flex-col justify-between">
+                    <div>
+                      <span className="text-[10px] text-gray-400 font-semibold block mb-0.5">
+                        {item.clientType}
+                      </span>
+                      <h4 className="text-sm font-bold text-[#17231B] group-hover:text-[#0B6B35] transition-colors line-clamp-1">
+                        {item.title}
+                      </h4>
+                    </div>
+                    <span className="text-xs font-bold text-[#0B6B35] mt-3 block">
+                      Learn more →
                     </span>
-                    <h4 className="text-sm font-bold text-[#17231B] group-hover:text-[#0B6B35] transition-colors line-clamp-1">
-                      {item.title}
-                    </h4>
                   </div>
-                  <span className="text-xs font-bold text-[#0B6B35] mt-3 block">
-                    Learn more →
-                  </span>
-                </div>
-              </Link>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -528,14 +576,31 @@ export const Home = () => {
           FACEBOOK BUSINESS PAGE HIGHLIGHT (Verified Link Integration)
       ========================================================================= */}
       <section className="py-12 bg-gradient-to-r from-blue-900 to-indigo-900 text-white relative overflow-hidden">
+        {/* Subtle floating social icons in background */}
+        <motion.div 
+          animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-6 right-10 text-white/10 pointer-events-none text-9xl font-black select-none"
+        >
+          f
+        </motion.div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 sm:p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 sm:p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl"
+          >
             <div className="flex items-center gap-5">
-              <div className="w-14 h-14 rounded-2xl bg-[#1877F2] text-white flex items-center justify-center shrink-0 shadow-lg">
+              <motion.div 
+                whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                className="w-14 h-14 rounded-2xl bg-[#1877F2] text-white flex items-center justify-center shrink-0 shadow-lg shadow-[#1877F2]/40"
+              >
                 <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
-              </div>
+              </motion.div>
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-[#F4C542]">
                   Official Facebook Business Page
@@ -549,25 +614,32 @@ export const Home = () => {
               </div>
             </div>
 
-            <a
+            <motion.a
               href={BUSINESS_CONFIG.facebook}
               target="_blank"
               rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className="px-6 py-3.5 rounded-xl font-bold text-sm bg-white text-blue-900 hover:bg-[#F4C542] hover:text-[#17231B] transition-colors shadow-lg shrink-0 inline-flex items-center gap-2"
             >
               <span>Visit Facebook Page</span>
               <ExternalLink size={16} />
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
         </div>
       </section>
 
       {/* =========================================================================
-          FAQ SECTION
+          FAQ SECTION (Animated Expandable Accordion)
       ========================================================================= */}
       <section className="py-16 md:py-24 bg-[#F6F8F5]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#0B6B35]/10 text-[#0B6B35] mb-3">
               <DynamicIcon name="HelpCircle" size={13} />
               Clear Answers
@@ -578,23 +650,10 @@ export const Home = () => {
             <p className="text-gray-500 text-sm mt-2">
               Everything you need to know about working with JK Advertisement.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="space-y-4">
-            {GENERAL_FAQS.map((faq, i) => (
-              <div 
-                key={i} 
-                className="bg-white rounded-2xl p-5 sm:p-6 border border-gray-100 shadow-sm"
-              >
-                <h3 className="text-base font-bold text-[#17231B] mb-2">
-                  {faq.q}
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {faq.a}
-                </p>
-              </div>
-            ))}
-          </div>
+          {/* Interactive Animated Accordion */}
+          <FaqAccordion items={GENERAL_FAQS} />
         </div>
       </section>
 
