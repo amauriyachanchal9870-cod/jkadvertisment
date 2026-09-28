@@ -96,7 +96,7 @@ export const Home = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-3">
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#0B6B35] to-[#16A34A] shadow-lg shadow-[#0B6B35]/25 hover:shadow-xl hover:shadow-[#0B6B35]/35 hover:-translate-y-0.5 transition-all duration-200 active:translate-y-0"
+                  className="w-full sm:w-auto btn-shimmer inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#0B6B35] to-[#16A34A] shadow-xl shadow-[#0B6B35]/30 hover:shadow-2xl hover:shadow-[#0B6B35]/40 hover:-translate-y-1 transition-all duration-300 active:translate-y-0"
                 >
                   <span>Get a Free Quote</span>
                   <ArrowRight size={16} />
@@ -104,7 +104,7 @@ export const Home = () => {
 
                 <Link
                   to="/services"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-[#17231B] bg-white hover:bg-gray-50 border border-gray-200 shadow-sm transition-all duration-200 hover:-translate-y-0.5"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-[#17231B] bg-white hover:bg-gray-50 border border-gray-200 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-[#0B6B35]/30"
                 >
                   <span>Explore Our Services</span>
                   <ChevronRight size={16} className="text-[#0B6B35]" />
@@ -114,7 +114,7 @@ export const Home = () => {
                   href={getWhatsAppLink()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-bold text-sm text-[#16A34A] bg-[#16A34A]/10 hover:bg-[#16A34A]/20 transition-colors"
+                  className="w-full sm:w-auto btn-shimmer inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-bold text-sm text-[#16A34A] bg-[#16A34A]/10 hover:bg-[#16A34A]/20 transition-all duration-300 hover:-translate-y-1"
                   aria-label="Chat directly on WhatsApp"
                 >
                   <MessageCircle size={18} />
@@ -131,9 +131,9 @@ export const Home = () => {
               className="lg:col-span-5 relative"
             >
               <div className="relative mx-auto max-w-md lg:max-w-none">
-                {/* Main Agency Visual Card */}
-                <div className="relative bg-white rounded-3xl p-4 sm:p-5 shadow-2xl border border-gray-100 overflow-hidden">
-                  <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-gray-900">
+                {/* Main Agency Visual Card with 3D Hover & Zoom */}
+                <div className="relative bg-white rounded-3xl p-4 sm:p-5 shadow-2xl border border-gray-100 overflow-hidden card-hover-effect">
+                  <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-gray-900 img-zoom-container">
                     <img 
                       src="https://images.unsplash.com/photo-1557838923-2985c318be48?w=900&auto=format&fit=crop&q=80" 
                       alt="Digital marketing campaign planning" 

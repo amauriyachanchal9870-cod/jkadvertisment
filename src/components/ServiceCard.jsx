@@ -24,7 +24,7 @@ export const ServiceCard = ({ service, index = 0 }) => {
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative bg-white rounded-3xl p-6 sm:p-7 border border-gray-100/90 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between overflow-hidden"
+      className="group relative bg-white rounded-3xl p-6 sm:p-7 border border-gray-100 shadow-card hover:shadow-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden card-hover-effect hover:border-[#0B6B35]/40"
     >
       {/* Dynamic Animated Top Shimmer Border */}
       <div 
@@ -105,7 +105,7 @@ export const ServiceCard = ({ service, index = 0 }) => {
       <div className="pt-2 flex items-center gap-3 relative z-10">
         <Link
           to={`/services/${service.slug}`}
-          className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-bold text-[#0B6B35] bg-[#0B6B35]/8 hover:bg-[#0B6B35] hover:text-white transition-all duration-200 group/btn shadow-sm"
+          className="flex-1 btn-shimmer inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-bold text-[#0B6B35] bg-[#0B6B35]/8 hover:bg-[#0B6B35] hover:text-white transition-all duration-200 group/btn shadow-sm"
         >
           <span>Learn More</span>
           <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />

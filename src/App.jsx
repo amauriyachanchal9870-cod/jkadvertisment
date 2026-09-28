@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -6,6 +6,7 @@ import { WhatsAppButton } from './components/WhatsAppButton';
 import { ScrollToTop } from './components/ScrollToTop';
 import { PageLoader } from './components/PageLoader';
 import { ScrollProgressBar } from './components/ScrollProgressBar';
+import { SitePreloader } from './components/SitePreloader';
 
 // Code-split lazy loaded pages for optimal performance and instant initial load
 const Home = lazy(() => import('./pages/Home'));
@@ -17,8 +18,15 @@ const Contact = lazy(() => import('./pages/Contact'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 export const App = () => {
+  const [showPreloader, setShowPreloader] = useState(true);
+
   return (
     <div className="flex flex-col min-h-screen bg-[#F6F8F5]">
+      {/* Animated Initial Site Preloader */}
+      {showPreloader && (
+        <SitePreloader onFinish={() => setShowPreloader(false)} />
+      )}
+
       {/* Scroll restoration helper */}
       <ScrollToTop />
 

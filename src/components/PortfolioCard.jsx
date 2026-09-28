@@ -12,10 +12,10 @@ export const PortfolioCard = ({ item, onClick, index = 0 }) => {
       whileHover={{ y: -8, scale: 1.01 }}
       whileTap={{ scale: 0.98 }}
       onClick={() => onClick(item)}
-      className="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-300 cursor-pointer flex flex-col"
+      className="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-card hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col card-hover-effect hover:border-[#0B6B35]/40"
     >
       {/* Image Preview Container */}
-      <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden">
+      <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden img-zoom-container">
         <img
           src={item.thumbnail}
           alt={item.title}
