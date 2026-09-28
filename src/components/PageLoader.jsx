@@ -10,7 +10,7 @@ export const PageLoader = () => {
         </div>
       </div>
       <p className="mt-4 text-xs font-bold uppercase tracking-wider text-[#0B6B35] animate-pulse">
-        Loading JK Advertisement...
+        Loading JK Advertisment Agency...
       </p>
     </div>
   );

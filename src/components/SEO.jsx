@@ -10,8 +10,8 @@ export const SEO = ({ title, description, keywords }) => {
 
   useEffect(() => {
     // Title
-    const baseTitle = "JK Advertisement | Firozabad";
-    document.title = title ? `${title} | JK Advertisement` : "JK Advertisement | Digital Marketing & Advertising Agency in Firozabad";
+    const baseTitle = "JK Advertisment Agency | Firozabad";
+    document.title = title ? `${title} | JK Advertisment Agency` : "JK Advertisment Agency | Digital Marketing & Advertising in Firozabad";
 
     // Meta description
     const metaDesc = document.querySelector('meta[name="description"]');

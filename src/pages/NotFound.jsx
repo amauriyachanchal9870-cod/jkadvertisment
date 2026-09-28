@@ -8,7 +8,7 @@ export const NotFound = () => {
     <>
       <SEO 
         title="Page Not Found (404)"
-        description="The page you are looking for cannot be found. Return to JK Advertisement home page."
+        description="The page you are looking for cannot be found. Return to JK Advertisment Agency home page."
       />
 
       <section className="min-h-[70vh] flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 bg-[#F6F8F5]">

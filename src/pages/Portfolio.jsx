@@ -21,7 +21,7 @@ export const Portfolio = () => {
     <>
       <SEO 
         title="Our Work & Portfolio | Advertising & Design Samples"
-        description="Browse creative design samples, Facebook ad frameworks, social media posts, and promotional campaigns created by JK Advertisement in Firozabad."
+        description="Browse creative design samples, Facebook ad frameworks, social media posts, and promotional campaigns created by JK Advertisment Agency in Firozabad."
       />
 
       <PageHeader

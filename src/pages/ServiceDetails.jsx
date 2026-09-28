@@ -38,7 +38,7 @@ export const ServiceDetails = () => {
     <>
       <SEO 
         title={`${service.title} Services in Firozabad`}
-        description={`${service.title} by JK Advertisement in Firozabad. ${service.tagline} ${service.description}`}
+        description={`${service.title} by JK Advertisment Agency in Firozabad. ${service.tagline} ${service.description}`}
       />
 
       <PageHeader

@@ -32,13 +32,13 @@ export const Home = () => {
     <>
       <SEO 
         title="Smart Advertising & Creative Digital Solutions"
-        description="JK Advertisement is a premier digital marketing and advertising agency in Firozabad. Facebook ad campaigns, social media management, creative design, video editing, bulk SMS, and WhatsApp marketing."
+        description="JK Advertisment Agency is a premier digital marketing and advertising agency in Firozabad. Facebook ad campaigns, social media management, creative design, video editing, bulk SMS, and WhatsApp marketing."
       />
 
       {/* =========================================================================
           HERO SECTION
           Headline: "Grow Your Business with Smart Advertising & Creative Digital Solutions"
-          Supporting: "From social media marketing and Facebook advertising to creative design, video editing, and digital branding — JK Advertisement helps your business build a powerful online presence."
+          Supporting: "From social media marketing and Facebook advertising to creative design, video editing, and digital branding — JK Advertisment Agency helps your business build a powerful online presence."
       ========================================================================= */}
       <section className="relative pt-8 pb-16 md:pt-16 md:pb-24 lg:pt-20 lg:pb-32 overflow-hidden bg-gradient-to-b from-white via-[#F6F8F5] to-[#F6F8F5]">
         {/* Ambient Gradient Glows */}
@@ -73,7 +73,7 @@ export const Home = () => {
 
               {/* Exact Prompt Supporting Text */}
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                From social media marketing and Facebook advertising to creative design, video editing, and digital branding — JK Advertisement helps your business build a powerful online presence.
+                From social media marketing and Facebook advertising to creative design, video editing, and digital branding — JK Advertisment Agency helps your business build a powerful online presence.
               </p>
 
               {/* Verified Trust Badges */}
@@ -347,7 +347,7 @@ export const Home = () => {
       </section>
 
       {/* =========================================================================
-          WHY CHOOSE JK ADVERTISEMENT
+          WHY CHOOSE JK ADVERTISMENT AGENCY
       ========================================================================= */}
       <section className="py-16 md:py-24 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -361,7 +361,7 @@ export const Home = () => {
               </span>
 
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#17231B] tracking-tight leading-tight">
-                Why Choose <span className="text-[#0B6B35]">JK Advertisement</span> for Your Brand?
+                Why Choose <span className="text-[#0B6B35]">JK Advertisment Agency</span> for Your Brand?
               </h2>
 
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
@@ -606,7 +606,7 @@ export const Home = () => {
                   Official Facebook Business Page
                 </span>
                 <h3 className="text-xl sm:text-2xl font-extrabold text-white mt-0.5">
-                  Follow JK Advertisement on Facebook
+                  Follow JK Advertisment Agency on Facebook
                 </h3>
                 <p className="text-xs sm:text-sm text-blue-100/80 mt-1 max-w-xl">
                   Stay updated with our newest campaign designs, festival creative announcements, and digital marketing insights.
@@ -648,7 +648,7 @@ export const Home = () => {
               Frequently Asked Questions
             </h2>
             <p className="text-gray-500 text-sm mt-2">
-              Everything you need to know about working with JK Advertisement.
+              Everything you need to know about working with JK Advertisment Agency.
             </p>
           </motion.div>
 

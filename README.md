@@ -1,6 +1,6 @@
-# JK Advertisement – Modern Static Website
+# JK Advertisment Agency – Modern Static Website
 
-Official static website for **JK Advertisement**, a premier advertising and creative digital marketing agency based in Firozabad, Uttar Pradesh.
+Official static website for **JK Advertisment Agency**, a premier advertising and creative digital marketing agency based in Firozabad, Uttar Pradesh.
 
 Developed with **React 18**, **Vite 6**, **Tailwind CSS**, **Framer Motion**, and **Lucide React**.
 
@@ -133,7 +133,7 @@ Upload the static files from the `dist/` directory directly to your web root (`p
 ---
 
 ## 📞 Business Information Reference
-- **Agency Name:** JK Advertisement
+- **Agency Name:** JK Advertisment Agency
 - **Office Address:** Dwarkapuri, Kotla Road, Firozabad – 283203, Uttar Pradesh, India
 - **Phones:** +91-9837436607, +91-7042497485
 - **Email:** jsadvertisment@gmail.com

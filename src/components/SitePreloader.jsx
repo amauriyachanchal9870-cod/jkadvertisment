@@ -39,26 +39,20 @@ export const SitePreloader = ({ onFinish }) => {
           <div className="absolute w-64 h-64 bg-[#F4C542]/15 rounded-full blur-2xl pointer-events-none" />
 
           <div className="relative z-10 flex flex-col items-center max-w-sm w-full text-center">
-            {/* Animated Logo Monogram */}
+            {/* Animated Official Emblem Logo */}
             <motion.div
               animate={{ 
                 scale: [0.95, 1.05, 0.95],
                 rotate: [0, 2, -2, 0]
               }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-[#0B6B35] to-[#16A34A] p-4 shadow-2xl shadow-[#0B6B35]/50 border border-white/20 mb-6 flex items-center justify-center"
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+              className="relative w-24 h-24 rounded-full overflow-hidden shadow-2xl shadow-[#0B6B35]/60 border-2 border-[#16A34A] mb-6 flex items-center justify-center p-0.5 bg-white"
             >
-              <svg 
-                viewBox="0 0 100 100" 
-                className="w-12 h-12 text-white" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="50" cy="50" r="44" stroke="#F4C542" strokeWidth="3" strokeDasharray="10 8" opacity="0.8"/>
-                <path d="M28 26 H42 V58 C42 66 36 72 26 72 C22 72 18 70 16 68 L20 58 C22 59 24 60 26 60 C29 60 30 58 30 54 V26 Z" fill="#FFFFFF"/>
-                <path d="M50 26 H62 V45 L76 26 H90 L70 50 L91 74 H77 L62 55 V74 H50 V26 Z" fill="#F4C542"/>
-                <circle cx="80" cy="28" r="4" fill="#FFFFFF"/>
-              </svg>
+              <img
+                src="/images/logo.png"
+                alt="JK Advertisment Agency"
+                className="w-full h-full object-cover rounded-full"
+              />
             </motion.div>
 
             {/* Agency Brand Name with Glow */}
@@ -70,10 +64,11 @@ export const SitePreloader = ({ onFinish }) => {
             >
               <h1 className="text-2xl font-black tracking-tight text-white flex items-center justify-center gap-2">
                 <span>JK</span>
-                <span className="text-[#16A34A]">ADVERTISEMENT</span>
+                <span className="text-[#16A34A]">ADVERTISMENT</span>
+                <span className="text-[#F4C542] text-xs font-bold px-1.5 py-0.5 rounded bg-white/10 border border-white/20">AGENCY</span>
               </h1>
               <p className="text-xs font-semibold uppercase tracking-widest text-[#F4C542]">
-                Smart Advertising & Creative Solutions
+                Digital, Social Media & Research Solutions
               </p>
             </motion.div>
 

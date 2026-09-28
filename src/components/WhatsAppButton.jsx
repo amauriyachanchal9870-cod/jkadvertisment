@@ -28,7 +28,7 @@ export const WhatsAppButton = () => {
             <div className="w-2.5 h-2.5 rounded-full bg-[#16A34A] animate-ping mt-1 shrink-0" />
             <div>
               <p className="font-extrabold text-[#17231B] text-xs">Need Quick Marketing Help?</p>
-              <p className="text-gray-500 mt-0.5 leading-relaxed text-[11px]">Chat directly with the JK Advertisement creative team on WhatsApp.</p>
+              <p className="text-gray-500 mt-0.5 leading-relaxed text-[11px]">Chat directly with the JK Advertisment Agency creative team on WhatsApp.</p>
             </div>
           </motion.div>
         )}
@@ -48,7 +48,7 @@ export const WhatsAppButton = () => {
           href={getWhatsAppLink()}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Chat with JK Advertisement on WhatsApp"
+          aria-label="Chat with JK Advertisment Agency on WhatsApp"
           whileHover={{ scale: 1.1, rotate: [0, -6, 6, 0] }}
           whileTap={{ scale: 0.92 }}
           transition={{ duration: 0.3 }}

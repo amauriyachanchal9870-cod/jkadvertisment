@@ -19,12 +19,12 @@ export const Contact = () => {
     <>
       <SEO 
         title="Contact Us | Phone, WhatsApp & Office in Firozabad"
-        description="Contact JK Advertisement in Firozabad, Uttar Pradesh. Call +91-9837436607 or +91-7042497485, chat on WhatsApp, or email jsadvertisment@gmail.com for advertising and digital marketing services."
+        description="Contact JK Advertisment Agency in Firozabad, Uttar Pradesh. Call +91-9837436607 or +91-7042497485, chat on WhatsApp, or email jsadvertisment@gmail.com for advertising and digital marketing services."
       />
 
       <PageHeader
         badge="Contact Us"
-        title="Get in Touch with JK Advertisement"
+        title="Get in Touch with JK Advertisment Agency"
         description="Have a question or ready to launch your advertising campaign? Reach out to our team in Firozabad via phone, WhatsApp, email, or send your requirement below."
         breadcrumb={[{ name: "Contact Us" }]}
       />
@@ -162,7 +162,7 @@ export const Contact = () => {
                       </div>
                       <div>
                         <div className="text-xs font-bold text-blue-900 group-hover:text-blue-700">
-                          Visit JK Advertisement on Facebook
+                          Visit JK Advertisment Agency on Facebook
                         </div>
                         <div className="text-[11px] text-blue-600">Connect with our business page</div>
                       </div>
@@ -197,7 +197,7 @@ export const Contact = () => {
 
             <div className="rounded-2xl overflow-hidden aspect-[21/9] sm:aspect-[24/9] bg-gray-100 border border-gray-200">
               <iframe
-                title="JK Advertisement Location Map"
+                title="JK Advertisment Agency Location Map"
                 src={`https://maps.google.com/maps?q=${BUSINESS_CONFIG.mapQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
                 width="100%"
                 height="100%"

@@ -1,5 +1,5 @@
 /**
- * Detailed service catalog for JK Advertisement.
+ * Detailed service catalog for JK Advertisment Agency.
  * Extracted and structured from verified agency credentials and business references.
  */
 
@@ -69,7 +69,7 @@ export const SERVICES = [
       "Account security & business asset maintenance",
       "Facebook Blue Tick / verification-related guidance"
     ],
-    disclaimer: "Meta controls all verification eligibility and approval policies. JK Advertisement provides setup assistance and documentation readiness; we do not promise guaranteed verification or claim official Meta affiliation.",
+    disclaimer: "Meta controls all verification eligibility and approval policies. JK Advertisment Agency provides setup assistance and documentation readiness; we do not promise guaranteed verification or claim official Meta affiliation.",
     deliverables: [
       "Meta Business Suite setup & pixel/event tracking guidance",
       "Custom ad creatives & conversion-optimized copy",
