@@ -42,7 +42,7 @@ export const Services = () => {
     <>
       <SEO 
         title="Advertising & Digital Marketing Services"
-        description="Explore the complete spectrum of advertising solutions from JK Advertisment Agency: Social Media Management, Facebook Advertising, Graphic Design, Video Reels, Bulk SMS, WhatsApp Campaigns, Voice Calls, Toll-Free numbers, and Commercial Printing."
+        description="Explore the complete spectrum of advertising solutions from JS Advertisment Agency: Social Media Management, Facebook Advertising, Graphic Design, Video Reels, Bulk SMS, WhatsApp Campaigns, Voice Calls, Toll-Free numbers, and Commercial Printing."
       />
 
       <PageHeader

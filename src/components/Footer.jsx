@@ -33,7 +33,7 @@ export const Footer = () => {
               Ready to grow your business with smart advertising?
             </h2>
             <p className="text-white/90 text-sm sm:text-base leading-relaxed mb-6">
-              Connect with JK Advertisment Agency today for customized social media promotions, poster designs, video reels, and local marketing campaigns.
+              Connect with JS Advertisment Agency today for customized social media promotions, poster designs, video reels, and local marketing campaigns.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Link
@@ -62,7 +62,7 @@ export const Footer = () => {
           <div className="lg:col-span-4 space-y-4">
             <Logo variant="light" size="large" />
             <p className="text-gray-400 text-sm leading-relaxed mt-4">
-              JK Advertisment Agency is Firozabad's dedicated advertising, digital marketing, and research solutions agency. We deliver strategic social media promotion, Facebook ad boosting, creative poster design, video reels, and multi-channel messaging solutions.
+              JS Advertisment Agency is Firozabad's dedicated advertising, digital marketing, and research solutions agency. We deliver strategic social media promotion, Facebook ad boosting, creative poster design, video reels, and multi-channel messaging solutions.
             </p>
 
             {/* Facebook Connection Card */}
@@ -190,7 +190,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
           <div>
-            © {new Date().getFullYear()} <strong className="text-white">JK Advertisment Agency</strong>. All Rights Reserved.
+            © {new Date().getFullYear()} <strong className="text-white">JS Advertisment Agency</strong>. All Rights Reserved.
           </div>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1 text-gray-400">

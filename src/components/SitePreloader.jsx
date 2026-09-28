@@ -50,7 +50,7 @@ export const SitePreloader = ({ onFinish }) => {
             >
               <img
                 src="/images/logo.png"
-                alt="JK Advertisment Agency"
+                alt="JS Advertisment Agency"
                 className="w-full h-full object-cover rounded-full"
               />
             </motion.div>
@@ -63,7 +63,7 @@ export const SitePreloader = ({ onFinish }) => {
               className="space-y-1 mb-8"
             >
               <h1 className="text-2xl font-black tracking-tight text-white flex items-center justify-center gap-2">
-                <span>JK</span>
+                <span>JS</span>
                 <span className="text-[#16A34A]">ADVERTISMENT</span>
                 <span className="text-[#F4C542] text-xs font-bold px-1.5 py-0.5 rounded bg-white/10 border border-white/20">AGENCY</span>
               </h1>

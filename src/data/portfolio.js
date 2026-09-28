@@ -1,5 +1,5 @@
 /**
- * Portfolio project data for JK Advertisment Agency.
+ * Portfolio project data for JS Advertisment Agency.
  * Clearly identified with category tags and demo/sample labels where applicable.
  */
 

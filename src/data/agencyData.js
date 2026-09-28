@@ -69,11 +69,11 @@ export const WHY_CHOOSE_US = [
 
 export const GENERAL_FAQS = [
   {
-    q: "Where is JK Advertisment Agency located?",
+    q: "Where is JS Advertisment Agency located?",
     a: "Our agency office is located at Dwarkapuri, Kotla Road, Firozabad – 283203, Uttar Pradesh. We work with clients both locally in Firozabad and across India through digital coordination."
   },
   {
-    q: "How can I start working with JK Advertisment Agency?",
+    q: "How can I start working with JS Advertisment Agency?",
     a: "You can click any of our 'Get a Free Quote' buttons, send an enquiry on WhatsApp (+91-9837436607), or call us directly. We will discuss your requirement and share customized packages."
   },
   {

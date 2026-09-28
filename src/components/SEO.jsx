@@ -10,8 +10,8 @@ export const SEO = ({ title, description, keywords }) => {
 
   useEffect(() => {
     // Title
-    const baseTitle = "JK Advertisment Agency | Firozabad";
-    document.title = title ? `${title} | JK Advertisment Agency` : "JK Advertisment Agency | Digital Marketing & Advertising in Firozabad";
+    const baseTitle = "JS Advertisment Agency | Firozabad";
+    document.title = title ? `${title} | JS Advertisment Agency` : "JS Advertisment Agency | Digital Marketing & Advertising in Firozabad";
 
     // Meta description
     const metaDesc = document.querySelector('meta[name="description"]');
@@ -26,7 +26,7 @@ export const SEO = ({ title, description, keywords }) => {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', `https://jkadvertisement.com${location.pathname}`);
+    canonical.setAttribute('href', `https://jsadvertisment.com${location.pathname}`);
 
     // Scroll to top on route change
     window.scrollTo(0, 0);

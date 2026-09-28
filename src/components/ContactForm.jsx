@@ -88,7 +88,7 @@ export const ContactForm = ({ defaultService = "" }) => {
 
     setRedirectNotice({
       channel: 'WhatsApp',
-      message: 'Preparing your enquiry... You will be redirected to WhatsApp to send your message directly to JK Advertisment Agency.'
+      message: 'Preparing your enquiry... You will be redirected to WhatsApp to send your message directly to JS Advertisment Agency.'
     });
 
     const url = getWhatsAppLink(null, formData);

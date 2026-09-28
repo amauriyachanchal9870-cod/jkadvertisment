@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 /**
  * Official Brand Logo with circular emblem image and updated brand name:
- * JK Advertisment Agency
+ * JS Advertisment Agency
  */
 export const Logo = ({ variant = 'default', size = 'default', className = '' }) => {
   const isLight = variant === 'light'; // For dark backgrounds (like footer)
@@ -24,13 +24,13 @@ export const Logo = ({ variant = 'default', size = 'default', className = '' }) 
     <Link 
       to="/" 
       className={`inline-flex items-center gap-2.5 sm:gap-3 group select-none transition-transform duration-200 active:scale-95 ${className}`}
-      aria-label="JK Advertisment Agency - Home"
+      aria-label="JS Advertisment Agency - Home"
     >
       {/* Official Emblem Logo Image with Hover Pulse & Glow */}
       <div className={`relative rounded-full overflow-hidden shrink-0 shadow-md shadow-[#0B6B35]/25 border border-[#0B6B35]/30 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-[#0B6B35]/40 transition-all duration-300 ${emblemSizes[size] || emblemSizes.default}`}>
         <img 
           src="/images/logo.png" 
-          alt="JK Advertisment Agency Logo" 
+          alt="JS Advertisment Agency Logo" 
           className="w-full h-full object-cover"
           loading="eager"
         />
@@ -40,7 +40,7 @@ export const Logo = ({ variant = 'default', size = 'default', className = '' }) 
       <div className="flex flex-col leading-tight">
         <div className={`flex items-center flex-wrap gap-1 font-extrabold tracking-tight ${titleSizes[size] || titleSizes.default}`}>
           <span className={isLight ? 'text-white' : 'text-[#17231B]'}>
-            JK
+            JS
           </span>
           <span className="text-[#0B6B35] group-hover:text-[#16A34A] transition-colors">
             ADVERTISMENT

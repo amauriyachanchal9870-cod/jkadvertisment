@@ -56,14 +56,14 @@ export const About = () => {
   return (
     <>
       <SEO 
-        title="About Us | JK Advertisment Agency"
-        description="Learn about JK Advertisment Agency, a premier advertising and digital marketing agency based in Firozabad, Uttar Pradesh specializing in social media marketing, branding, and promotional creatives."
+        title="About Us | JS Advertisment Agency"
+        description="Learn about JS Advertisment Agency, a premier advertising and digital marketing agency based in Firozabad, Uttar Pradesh specializing in social media marketing, branding, and promotional creatives."
       />
 
       <PageHeader
         badge="About The Agency"
         title="Building Meaningful Visibility for Your Business"
-        description="JK Advertisment Agency is a full-service advertising and digital marketing agency based in Firozabad, Uttar Pradesh, dedicated to empowering local businesses with creative marketing and modern digital strategies."
+        description="JS Advertisment Agency is a full-service advertising and digital marketing agency based in Firozabad, Uttar Pradesh, dedicated to empowering local businesses with creative marketing and modern digital strategies."
         breadcrumb={[{ name: "About Us" }]}
       />
 
@@ -83,7 +83,7 @@ export const About = () => {
               </h2>
 
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                Operating from the industrial and commercial hub of Firozabad, <strong>JK Advertisment Agency</strong> helps retail shops, manufacturers, educational institutions, service providers, and emerging brands establish an authoritative presence online and offline.
+                Operating from the industrial and commercial hub of Firozabad, <strong>JS Advertisment Agency</strong> helps retail shops, manufacturers, educational institutions, service providers, and emerging brands establish an authoritative presence online and offline.
               </p>
 
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
@@ -106,7 +106,7 @@ export const About = () => {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-gray-900 aspect-[4/3]">
                 <img
                   src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=900&auto=format&fit=crop&q=80"
-                  alt="JK Advertisment Agency creative workspace"
+                  alt="JS Advertisment Agency creative workspace"
                   className="w-full h-full object-cover opacity-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />

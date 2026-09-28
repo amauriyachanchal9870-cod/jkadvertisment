@@ -1,14 +1,15 @@
 /**
- * Centralized business configuration for JK Advertisment Agency.
+ * Centralized business configuration for JS Advertisment Agency.
  * All contact details, social links, and WhatsApp helpers are managed here.
  */
 
 export const BUSINESS_CONFIG = {
-  name: "JK Advertisment Agency",
-  shortName: "JK Agency",
+  name: "JS Advertisment Agency",
+  shortName: "JS Agency",
+  website: "https://jsadvertisment.com",
   tagline: "We Provide Digital, Social Media & Research Solution",
   slogan: "हम आपके विचारों को डिजाईन में बदलते है",
-  description: "From social media marketing and Facebook advertising to creative design, video editing, and digital branding — JK Advertisment Agency helps your business build a powerful online presence.",
+  description: "From social media marketing and Facebook advertising to creative design, video editing, and digital branding — JS Advertisment Agency helps your business build a powerful online presence.",
   
   // Exact business address from verified details
   address: {
@@ -61,7 +62,7 @@ export const getWhatsAppLink = (serviceName = null, customDetails = null) => {
   
   if (customDetails) {
     const { name, businessName, phone, service, budget, requirement } = customDetails;
-    message = `Hello JK Advertisment Agency,\n\nI would like to submit a project enquiry:\n` +
+    message = `Hello JS Advertisment Agency,\n\nI would like to submit a project enquiry:\n` +
       `• Name: ${name || 'N/A'}\n` +
       (businessName ? `• Business: ${businessName}\n` : '') +
       `• Phone: ${phone || 'N/A'}\n` +
@@ -69,9 +70,9 @@ export const getWhatsAppLink = (serviceName = null, customDetails = null) => {
       (budget ? `• Budget Range: ${budget}\n` : '') +
       `• Project Requirements: ${requirement || 'Looking for business advertising solutions.'}\n\nPlease share more details and pricing.`;
   } else if (serviceName) {
-    message = `Hello JK Advertisment Agency, I am interested in your ${serviceName} service. Please share the details and pricing.`;
+    message = `Hello JS Advertisment Agency, I am interested in your ${serviceName} service. Please share the details and pricing.`;
   } else {
-    message = `Hello JK Advertisment Agency, I would like to enquire about your services. Please share more details.`;
+    message = `Hello JS Advertisment Agency, I would like to enquire about your services. Please share more details.`;
   }
 
   return `https://wa.me/${BUSINESS_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
@@ -81,13 +82,13 @@ export const getWhatsAppLink = (serviceName = null, customDetails = null) => {
  * Generate mailto URL for direct email enquiries
  */
 export const getMailtoLink = (serviceName = null, customDetails = null) => {
-  let subject = "Enquiry: JK Advertisment Agency Services";
-  let body = "Hello JK Advertisment Agency Team,\n\nI would like to enquire about your advertising and marketing services.";
+  let subject = "Enquiry: JS Advertisment Agency Services";
+  let body = "Hello JS Advertisment Agency Team,\n\nI would like to enquire about your advertising and marketing services.";
 
   if (customDetails) {
     const { name, businessName, phone, email, service, budget, requirement } = customDetails;
     subject = `Website Enquiry - ${service || 'Advertising Services'} - ${name || 'Prospective Client'}`;
-    body = `Hello JK Advertisment Agency Team,\n\nHere are my project enquiry details:\n\n` +
+    body = `Hello JS Advertisment Agency Team,\n\nHere are my project enquiry details:\n\n` +
       `Full Name: ${name || 'N/A'}\n` +
       (businessName ? `Business Name: ${businessName}\n` : '') +
       `Phone Number: ${phone || 'N/A'}\n` +
@@ -97,7 +98,7 @@ export const getMailtoLink = (serviceName = null, customDetails = null) => {
       `Project Requirements:\n${requirement || 'Please contact me regarding your advertising solutions.'}\n\nThank you,\n${name || 'Client'}`;
   } else if (serviceName) {
     subject = `Service Enquiry: ${serviceName}`;
-    body = `Hello JK Advertisment Agency,\n\nI am interested in your "${serviceName}" service.\n\nPlease share your service details, workflow, and pricing structure.\n\nThank you!`;
+    body = `Hello JS Advertisment Agency,\n\nI am interested in your "${serviceName}" service.\n\nPlease share your service details, workflow, and pricing structure.\n\nThank you!`;
   }
 
   return `mailto:${BUSINESS_CONFIG.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
